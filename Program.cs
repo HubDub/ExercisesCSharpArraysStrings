@@ -132,6 +132,51 @@ namespace ConsoleApplication
 
             Console.WriteLine("The difference between type String and type string is that there is no real difference. string is a built in alias for System.String but in general usage when we talk about a string object we use little s and when referring to a method we use big S");
 
+            Console.WriteLine("You can make a string all lowercase: ");
+            string stringLuke = "Luke";
+            Console.WriteLine("So, {0} becomes {1}", stringLuke, stringLuke.ToLower());
+            Console.WriteLine("You can make a string all uppercase: ");
+            string stringLiz = "Liz";
+            Console.WriteLine("So, " + stringLiz + " becomes " + stringLiz.ToUpper());
+
+            Console.WriteLine("You can ask the user what their first and last names are and then print them out by saving them to variables:");
+            Console.WriteLine("what is your first name?");
+            string firstName1 = Console.ReadLine();
+            Console.WriteLine("what is your last name?");
+            string lastName1 = Console.ReadLine();
+            Console.WriteLine("Your full name is: " + firstName1 + " " + lastName1);
+            Console.WriteLine("make the name all upper case regardless of what they've written:");
+            Console.WriteLine(firstName1.ToUpper() + " " + lastName1.ToUpper());
+
+            Console.WriteLine("To see if two strings are equal use either the == signs, the instance method Equals or the static class method String.Equals:");
+            string h1 = "hello";
+            string h2 = "hello";
+            bool a = (h1 == h2);
+            Console.WriteLine(a);
+            bool b = h1.Equals(h2);
+            Console.WriteLine(b);
+            bool c = String.Equals(h1, h2);
+            Console.WriteLine(c);
+
+            Console.WriteLine("You can figure out the index of the second usage of the word \"little\" in the rhyme by using the overloaded IndexOf method:");
+            string maryLambLong = "Mary had a little lamb, little lamb, little lamb";
+            Console.WriteLine(maryLambLong);
+            Console.WriteLine("First you find the first usage of \"little\"");
+            string findThis = "little";
+            int firstLittle = maryLambLong.IndexOf(findThis);
+            Console.WriteLine(firstLittle);
+            Console.WriteLine("Then you figure out where you will start the IndexOf by adding together the index of the first instance of little to the length of little and saving that in a variable:");
+            int searchAfter = firstLittle + findThis.Length;
+            Console.WriteLine("so you will start searching on the {0} character", searchAfter);
+            int secondLittle = maryLambLong.IndexOf("little", searchAfter);
+            Console.WriteLine("so the starting index of the second instance of \"little\" is: " + secondLittle);
+
+            Console.WriteLine("Now let's find the last occurance of \"little\" in this rhyme:");
+            string maryRhyme = "Mary had a little lamb,\nlittle lamb,\nlittle lamb,\nMary had a little lamb that was as white as snow";
+            Console.WriteLine(maryRhyme);
+            string searchWord = "little";
+            Console.WriteLine("we'll use the LastIndexOf method and find that the index of the last \"little\" is: " + maryRhyme.LastIndexOf(searchWord));
+
             
         }
     }
