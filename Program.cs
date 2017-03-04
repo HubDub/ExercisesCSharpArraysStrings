@@ -177,6 +177,95 @@ namespace ConsoleApplication
             string searchWord = "little";
             Console.WriteLine("we'll use the LastIndexOf method and find that the index of the last \"little\" is: " + maryRhyme.LastIndexOf(searchWord));
 
+            Console.WriteLine("we can use the same method to find the index of the last occurance of the letter \"w\" in the rhyme:");
+            Console.WriteLine(maryRhyme);
+            string searchChar = "w";
+            Console.WriteLine("the last instance of \"w\" is: " + maryRhyme.LastIndexOf("w"));
+
+            Console.WriteLine("Print out the lenght of \"basketball\" without assigning any variables");
+            Console.WriteLine("basketball".Length);
+
+            Console.WriteLine("using mary's rhyme, replace every \"little\" with \"big big\" like this. first let's remember the rhyme: ");
+            Console.WriteLine(maryRhyme);
+            Console.WriteLine("then use the replace method: ");
+            string toBeReplaced = "little";
+            string replaceWith = "big big";
+            string newMaryRhyme = maryRhyme.Replace("little", "big big");
+            Console.WriteLine(newMaryRhyme);
+
+            Console.WriteLine("now we'll remove the word \"little\" from the rhyme using the replace function: ");
+            Console.WriteLine("original rhyme: \n" + maryRhyme);
+            Console.WriteLine(maryRhyme.Replace("little", ""));
+
+            string phoneNum = "111-222-3333";
+            Console.WriteLine("Now we'll look at a phone number \n" + phoneNum + "\nand extract the area code using substring(index to start, number of characters)");
+            Console.WriteLine("the area code is: " + phoneNum.Substring(0, 3));
+
+            Console.WriteLine("now we'll extract the local number without area code using the same method");
+            Console.WriteLine(phoneNum.Substring(4));
+
+            Console.WriteLine("now we'll use the same method to extract the \"central office number\" or the three numbers in the midddle of the phone number");
+            Console.WriteLine(phoneNum.Substring(4, 3));
+
+            Console.WriteLine("Now we'll find the last \"1\" and print out its position");
+            Console.WriteLine(phoneNum.LastIndexOf("1"));
+
+            string greeting = "    how are you    ";
+            Console.WriteLine("now we'll take the string printed below and trim out the whitespace, we'll prove the whitespace at the end is gone by printing X after it");
+            Console.WriteLine(greeting);
+            Console.WriteLine(greeting.Trim() + "X");
+
+            Console.WriteLine("Now we'll only trim the trailing whitespaces with the TrimEnd method, again adding the X to prove it");
+            Console.WriteLine(greeting);
+            Console.WriteLine(greeting.TrimEnd() + "X");
+
+            Console.WriteLine("Now we'll trim the beginning but not the end of the line: ");
+            Console.WriteLine(greeting);
+            Console.WriteLine(greeting.TrimStart() + "X");
+
+            Console.WriteLine("Now, we'll look back at the mary's little lamb rhyme and figure out how to tell the position of the rhyme of the word \"lamb\" in the second line (basically get the index of the word \"lamb\" in the second line:");
+            Console.WriteLine(maryRhyme);
+            Console.WriteLine("first we find out the index of the beginning of the second line and the end of the second line using IndexOf:");
+            int lineStartsAt = maryRhyme.IndexOf("\n") + 1;
+            int wordStartsAt = maryRhyme.IndexOf("lamb", lineStartsAt);
+            Console.WriteLine("so the second line begins at {0}", lineStartsAt);
+            Console.WriteLine("now we overload IndexOf so that it looks for the word \"lamb\" after the beginning of the line");
+            Console.WriteLine("so \"lamb\" starts at the index of " + wordStartsAt + " in the second line");
+            Console.WriteLine("but we want the location RELATIVE to the second line, not the whole rhyme, so we need to subtract the index of where the line starts from the index of where the word starts.");
+            Console.WriteLine("So, relative to only the second line, the word \"lamb\" is at position " + (wordStartsAt - lineStartsAt));
+
+            string string1 = "Hello";
+            string string2 = "Jonathon";
+            Console.WriteLine("Now we'll take two words and have the program pad them so they are right justified on two seperate lines");
+            Console.WriteLine("in this case with only two words we can just print out the first string but pad it left the lenght of the second");
+            int difference = string2.Length - string1.Length;
+            Console.WriteLine(string1.PadLeft(string2.Length) + "\n" + string2);
+
+            Console.WriteLine("Now we'll take take the same two words but pad them left with the letter \"o\" instead of spaces by overloading the padleft method");
+            Console.WriteLine(string1.PadLeft(string2.Length, 'o') + "\n" + string2);
+
+            Console.WriteLine("now we'll use the same two strings and make them print out on separate lines, left aligned but with periods to make them the same lenghts");
+            Console.WriteLine("we can use the padRight method to do this");
+            Console.WriteLine(string1.PadRight(string2.Length, '.') + "\n" + string2);
+
+            string smary = "mary";
+            string shad = "had";
+            string sa = "a";
+            string slittle = "little";
+            string slamb = "lamb";
+            Console.WriteLine("now we'll look at \"mary had a little lamb\" each letter saved as a separate variable and print them out one on each line but in a field 10 characters long - this will right justify them at the end of the field");
+            Console.WriteLine("{0, 10}", smary);
+            Console.WriteLine("{0, 10}", shad);
+            Console.WriteLine("{0, 10}", sa);
+            Console.WriteLine("{0, 10}", slittle);
+            Console.WriteLine("{0, 10}", slamb);
+            
+            Console.WriteLine("now we'll do the same but this time left justify them in a field that is 10 spaces and also put a pipe around the fields");
+            Console.WriteLine("|{0, -10}|", smary);
+            Console.WriteLine("|{0, -10}|", shad);
+            Console.WriteLine("|{0, -10}|", sa);
+            Console.WriteLine("|{0, -10}|", slittle);
+            Console.WriteLine("|{0, -10}|", slamb);
             
         }
     }
