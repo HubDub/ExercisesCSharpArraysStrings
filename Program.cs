@@ -266,7 +266,9 @@ namespace ConsoleApplication
             Console.WriteLine("|{0, -10}|", sa);
             Console.WriteLine("|{0, -10}|", slittle);
             Console.WriteLine("|{0, -10}|", slamb);
-            
+
+            Console.WriteLine("now we'll write a method that will receive a string of numbers and console.writeline the highest and lowest numbers. See the HighAndLowMethod class for the method that does this. Below, we'll call the method and give it a string of numbers");
+            HighAndLowMethod.HighAndLow("1 2 3 4 5");
         }
     }
 }
